@@ -1,0 +1,240 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "ecommerce-validations;placing-the-order",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Placing the order",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6602066100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user logs in to the application with \"aabbccdd@gmail.com\" and \"Bbbbbb@1\"",
+            "match": {
+              "location": "features\\step_definition\\steps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6292051799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Add the product \"zara coat 3\" to cart",
+            "match": {
+              "location": "features\\step_definition\\steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2319243398
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Verify \"zara coat 4\" is displayed in the cart",
+            "match": {
+              "location": "features\\step_definition\\steps.js:20"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 894293500,
+              "error_message": "Error: expect(received).toBeTruthy()\n\nReceived: false\n    at Proxy.<anonymous> (C:\\Users\\user\\PlaywrightPrograms\\node_modules\\playwright\\lib\\matchers\\expect.js:172:37)\n    at CartPage.isProductSelected (C:\\Users\\user\\PlaywrightPrograms\\pageObjects\\CartPage.js:13:18)\n    at async World.<anonymous> (C:\\Users\\user\\PlaywrightPrograms\\features\\step_definition\\steps.js:22:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Verify \"aabbccdd@gmail.com\" is in the checkout page",
+            "match": {
+              "location": "features\\step_definition\\steps.js:25"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "Enter the \"ind\" and select the \" India\" and place the order",
+            "match": {
+              "location": "features\\step_definition\\steps.js:30"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "verify order is present in the order history",
+            "match": {
+              "location": "features\\step_definition\\steps.js:39"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 96621899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "ecommerce-validations;login-functionality-with-invalid-data",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Login functionality with invalid data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6916019900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "user logs in to the Ecommerce2 application with \"aabbccdd@gmail.com\" and \"Bbbbbb@1\"",
+            "match": {
+              "location": "features\\step_definition\\steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1713356598
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "verify error message is displayed",
+            "match": {
+              "location": "features\\step_definition\\steps.js:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2523938998
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 45007300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Validation",
+            "line": 14
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "ecommerce-validations;login-functionality-with-invalid-data",
+        "keyword": "Scenario Outline",
+        "line": 23,
+        "name": "Login functionality with invalid data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5323916800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "user logs in to the Ecommerce2 application with \"helper@gmail.com\" and \"helper@1\"",
+            "match": {
+              "location": "features\\step_definition\\steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1780343600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "verify error message is displayed",
+            "match": {
+              "location": "features\\step_definition\\steps.js:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2449318899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1751499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Validation",
+            "line": 14
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "ecommerce-validations",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Ecommerce validations",
+    "tags": [],
+    "uri": "features\\Ecommerce.feature"
+  }
+]

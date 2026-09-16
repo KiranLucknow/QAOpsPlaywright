@@ -1,0 +1,20 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/myfile"
+            ],
+            "url": "schemaURL"
+        },
+
+
+        {
+            "fileMatch": [
+                "/myfile"
+            ],
+            "url": "schemaURL"
+        }
+
+
+    ]
+}
