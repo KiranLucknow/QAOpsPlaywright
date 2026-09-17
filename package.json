@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": " npx playwright test tests/llc.spec.js --headed --config=playwright.config1.js",
+    "test": " npx playwright test tests/llc.spec.js --headed --config=playwright.config.js",
     "regression": "npx playwright test",
     "webTests": "npx playwright test --grep @Web",
     "APITests": "npx playwright test --grep @API",
