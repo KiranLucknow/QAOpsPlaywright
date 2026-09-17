@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test')
 
 //test.describe.configure({mode:'parallel'})
 //test.describe.configure({mode:'serial'})
-test('@Web Popup Validation', async ({ page }) => {
+test.only('@Web Popup Validation', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     //goback and forward button
     // await page.goto('http://google.com')
@@ -22,7 +22,15 @@ test('@Web Popup Validation', async ({ page }) => {
     await page.getByText('Top').click();
 
     //iframe
+    const iframe = page.locator('#courses-iframe');
+
+    // Read its src attribute
+    console.log('iframe src:', await iframe.getAttribute('src'));
+
     const framesPage = page.frameLocator('#courses-iframe');
+    console.log('Frame URLs:', page.frames().map(frame => frame.url()));
+    //console.log('iframe src:', await framesPage.getAttribute('src'));
+    //await page.pause();
     await framesPage.locator('li a[href*="lifetime-access"]:visible').click();  //visible select the element which is visible for that locator.
     const textCheck = await framesPage.locator('div.text h2').textContent();
     //console.log(textCheck.split(' ')[1]);
