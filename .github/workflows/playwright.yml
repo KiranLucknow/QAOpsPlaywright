@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v5
     - uses: actions/setup-node@v5
       with:
-        node-version: 20
+        node-version: 24
     - name: Install dependencies
       run: npm install
     - name: Azure Login
@@ -27,7 +27,7 @@ jobs:
     - name: Run Playwright tests on Azure
       env:
          PLAYWRIGHT_SERVICE_URL: ${{ vars.PLAYWRIGHT_SERVICE_URL }}
-      run: npx playwright test --config=playwright.service.config.js --workers=4
+      run: npx playwright test --config=playwright.service.config.js
     - name: Upload Playwright report
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
