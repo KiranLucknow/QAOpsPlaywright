@@ -34,6 +34,7 @@ test('@Web Popup Validation', async ({ page }) => {
     //console.log(textCheck.split(' ')[1]);
     const checkText = textCheck.split(' ')[1];
     console.log(checkText);
+
     console.log(textCheck);
 
 
