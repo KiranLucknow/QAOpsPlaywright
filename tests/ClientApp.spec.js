@@ -9,6 +9,7 @@ test('Client App Login', async ({ page }) => {
     const loginButton = page.locator("#login")
     const products = page.locator(".card-body")
     const productName = 'ZARA COAT 3'
+    //for azureSetup branch i put this line
     await page.goto("https://rahulshettyacademy.com/client");
     //await page.locator("a.btn1").click()
     await userName.fill(email);
