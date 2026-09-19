@@ -5,11 +5,11 @@ test('Playwright Special Locators', async ({ page }) => {
     await page.goto("https://rahulshettyacademy.com/angularpractice/")
     await page.getByLabel("Check me out if you Love IceCreams!").click()
     // incorrect locator await page.locator("input[name='name']").fill('Kiran')
-    //await page.locator("[name='name']").fill('Kiran');
-    //await page.getByLabel("Employed").click();
+    await page.locator("[name='name']").first().fill('Kiran');
+    await page.getByLabel("Employed").click();
     await page.getByPlaceholder("Password").fill("abc123") //placeHolder attribute should be in DOM
     await page.getByLabel("Employed").check();
-    await page.getByLabel("Gender1").selectOption("Female") // selectOption works for select tag element only
+    await page.getByLabel("Gender").selectOption("Female") // selectOption works for select tag element only
     await page.getByRole("button", { name: 'Submit' }).click() //input or button tag or class should have something related to button
     await page.getByText("Success! The Form has been submitted successfully!.").isVisible();
     await expect(page.getByText("Success! The Form has been submitted successfully!.")).toBeVisible({ timeout: 8000 })

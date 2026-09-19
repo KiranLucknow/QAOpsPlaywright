@@ -13,7 +13,7 @@ class CheckoutPage {
     async isUserNamePresent(userName, expect) {
         let bool = await this.usernameLabel.textContent();
         console.log(bool)
-        expect(this.usernameLabel).toHaveText(userName)
+        await expect(this.usernameLabel).toHaveText(userName)
         console.log(bool)
     }
 
