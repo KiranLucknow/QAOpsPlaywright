@@ -25,6 +25,7 @@ class DashboardPage {
     }
     async navigateToCart() {
         await this.cartButton.click();
+        await this.page.pause();
         await this.page.locator('div li').first().waitFor();
 
     }

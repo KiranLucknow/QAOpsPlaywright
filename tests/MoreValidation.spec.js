@@ -24,24 +24,20 @@ test('@Web Popup Validation', async ({ page }) => {
     //iframe
     const iframe = page.locator('#courses-iframe');
 
-    // Read its src attribute
-    console.log('iframe src:', await iframe.getAttribute('src'));
+    //// Read its src attribute
+    // console.log('iframe src:', await iframe.getAttribute('src'));
 
-    const framesPage = page.frameLocator('#courses-iframe');
-    console.log('Frame URLs:', page.frames().map(frame => frame.url()));
-    await framesPage.locator('li a[href*="lifetime-access"]:visible').click();  //visible select the element which is visible for that locator.
-    const textCheck = await framesPage.locator('div.text h2').textContent();
-    //console.log(textCheck.split(' ')[1]);
-    const checkText = textCheck.split(' ')[1];
-    console.log(checkText);
+    // const framesPage = page.frameLocator('#courses-iframe');
+    // console.log('Frame URLs:', page.frames().map(frame => frame.url()));
+    // await framesPage.locator('li a[href*="lifetime-access"]:visible').click();  //visible select the element which is visible for that locator.
+    // const textCheck = await framesPage.locator('div.text h2').textContent();
+    // //console.log(textCheck.split(' ')[1]);
+    // const checkText = textCheck.split(' ')[1];
+    // console.log(checkText);
 
-    console.log(textCheck);
-
-
-
-
-
+    // console.log(textCheck);
 })
+
 
 test('Screenshot and visual comaprison', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
