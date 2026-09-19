@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.only('Playwright Special Locators', async ({ page }) => {
+test('Playwright Special Locators', async ({ page }) => {
 
     await page.goto("https://rahulshettyacademy.com/angularpractice/")
     await page.getByLabel("Check me out if you Love IceCreams!").click()
