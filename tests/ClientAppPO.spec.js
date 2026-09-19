@@ -34,7 +34,7 @@ for (const data of dataset) {
 
 
 
-Customtest.only(`@Web Client App Login datafixture`, async ({ page, testDataForOrder }) => {
+Customtest(`@Web Client App Login datafixture`, async ({ page, testDataForOrder }) => {
 
     const poManager = new POmanager(page);
     const products = page.locator(".card-body")
