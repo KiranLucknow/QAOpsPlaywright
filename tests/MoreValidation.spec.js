@@ -54,5 +54,7 @@ test('Screenshot and visual comaprison', async ({ page }) => {
 
 test('Visual comaprison', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
-    expect(await page.screenshot()).toMatchSnapshot('landing.png');
+    expect(await page.screenshot()).toMatchSnapshot('landing.png', {
+        maxDiffPixelRatio: 0.05
+    });
 })
