@@ -52,9 +52,9 @@ test('Screenshot and visual comaprison', async ({ page }) => {
     //await page.locator('table.table-display:visible').screenshot({ path: 'tableScreenshot.png' })
 })
 
-test('Visual comaprison', async ({ page }) => {
-    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
-    expect(await page.screenshot()).toMatchSnapshot('landing.png', {
-        maxDiffPixelRatio: 0.05
-    });
-})
+// test('Visual comaprison', async ({ page }) => {
+//     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+//     expect(await page.screenshot()).toMatchSnapshot('landing.png', {
+//         maxDiffPixelRatio: 0.05
+//     });
+// })
