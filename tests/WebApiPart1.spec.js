@@ -3,14 +3,15 @@ const { expect, test, request } = require('@playwright/test');
 //import ApiUtils from "C:\\Users\\user\\PlaywrightPrograms\\tests\\utils\\ApiUtils.js"
 const { ApiUtils } = require("../utils/ApiUtils")
 const loginPayload = { userEmail: "aabbccdd@gmail.com", userPassword: "Bbbbbb@1" }
-const orderPayload = { orders: [{ country: "Cuba", productOrderedId: "6262e990e26b7e1a10e89bfa" }] };
+//productOrderId can be taken from url that shows which product i need to order
+const orderPayload = { orders: [{ country: "Cuba", productOrderedId: "6960eae1c941646b7a8b3ed3" }] };
 
 let response;
 //Login api
 test.beforeAll(async () => {
     //login
     const apiContext = await request.newContext();
-    ///order api
+    ///order api. Created order through api url call and providing data for the order
     const apiUtils = new ApiUtils(apiContext, loginPayload);
     response = await apiUtils.createOrder(orderPayload)
 
@@ -23,6 +24,7 @@ test('@API Place the order', async ({ page }) => {
         window.localStorage.setItem('token', value);
     }, response.token)
     await page.goto("https://rahulshettyacademy.com/client/");
+
     //verifying the order
     await page.locator('li [routerlink*="myorders"]').click()
     await page.locator('text=Order Id').waitFor()

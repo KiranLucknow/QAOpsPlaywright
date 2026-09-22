@@ -44,7 +44,7 @@ test('Locators with special timeouts', async ({ page }) => {
 
 
 
-test.skip('test by codegen', async ({ page }) => {
+test('test by codegen', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/angularpractice/');
     await page.getByRole('link', { name: 'Shop' }).click();
     await page.locator('app-card').filter({ hasText: 'iphone X $24.99 Lorem ipsum' }).getByRole('button').click();
@@ -52,7 +52,7 @@ test.skip('test by codegen', async ({ page }) => {
     await page.getByText('Checkout ( 2 ) (current)').click();
     await page.getByRole('button', { name: 'Checkout' }).click();
     await page.getByLabel('Please choose your delivery').click();
-    await page.getByLabel('Please choose your delivery').fill('ind');
+    await page.getByLabel('Please choose your delivery').pressSequentially('ind', { delay: 200 });
     await page.getByText('India').click();
     await page.getByText('I agree with the term &').click();
     await page.getByRole('button', { name: 'Purchase' }).click();
