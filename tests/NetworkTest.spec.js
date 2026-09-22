@@ -4,7 +4,7 @@ const { expect, test, request } = require('@playwright/test');
 const { ApiUtils } = require("../utils/ApiUtils");
 const { json } = require('stream/consumers');
 const loginPayload = { userEmail: "aabbccdd@gmail.com", userPassword: "Bbbbbb@1" }
-const orderPayload = { orders: [{ country: "Cuba", productOrderedId: "6262e990e26b7e1a10e89bfa" }] };
+const orderPayload = { orders: [{ country: "Cuba", productOrderedId: "6960eae1c941646b7a8b3ed3" }] };
 const fakePayLoadOrders = { data: [], message: "No Orders" }
 
 let response;
@@ -27,8 +27,8 @@ test('Place the order', async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client/");
 
   //intercepting
-await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
-async (route) => {
+  await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
+    async (route) => {
       const response = await page.request.fetch(route.request());
       //body = fakePayLoadOrders;
 
@@ -42,7 +42,7 @@ async (route) => {
     });
   //verifying the order
   await page.locator('li [routerlink*="myorders"]').click();
-  await page.waitForResponse('https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/655d3c0b7244490f95ee5bcf')
+  await page.waitForResponse('https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*')
   console.log(await page.locator('.mt-4').textContent());
   // const orderCount = await page.locator('tr')
 

@@ -11,13 +11,13 @@ test('@Web Browser context Playwright Test', async ({ browser }) => {
    const loginButton = page.locator("[type='submit']")
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
    console.log(await page.title())
-   await userName.fill("rahulshetty")
+   await userName.fill("rahulshettyacademy ")
    await password.fill("Learning@830$3mK2")
    await loginButton.click()
-   console.log(await page.locator("[style*='block']").textContent())
+   //console.log(await page.locator("[style*='block']").textContent())
    await expect(page.locator("[style*='block']")).toContainText("Incorrect")
    await userName.fill("rahulshettyacademy")
-   await password.fill("learning")
+   await password.fill("Learning@830$3mK2")
    await loginButton.click()
    await page.waitForLoadState()
 
@@ -59,7 +59,7 @@ test('@Web UI COntrols', async ({ page }) => {
    await expect(terms).toBeChecked()
    await terms.uncheck()
    await expect(documentLink).toHaveAttribute("class", "blinkingText")
-   console.log(expect(documentLink).toHaveAttribute("class", "blinkingText"))
+   console.log(await documentLink.getAttribute("class"));
    //await page.pause()
    //await loginButton.click()
 

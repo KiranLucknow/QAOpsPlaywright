@@ -6,8 +6,8 @@ test('Browser context Playwright Test', async ({ browser }) => {
    const context = await browser.newContext()
    const page = await context.newPage()
 
-   page.route('**/*.{jpg,png,jpeg}',route => route.abort());
-   page.route('**/*.css',route => route.abort());
+   page.route('**/*.{jpg,png,jpeg}', route => route.abort());
+   page.route('**/*.css', route => route.abort());
 
 
    const userName = page.locator("#username")
@@ -16,14 +16,15 @@ test('Browser context Playwright Test', async ({ browser }) => {
    await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
    console.log(await page.title())
    await userName.fill("rahulshetty")
-   await password.fill("learning")
+   await password.fill("Learning@830$3mK2")
    await loginButton.click()
    console.log(await page.locator("[style*='block']").textContent())
    await expect(page.locator("[style*='block']")).toContainText("Incorrect")
    await userName.fill("rahulshettyacademy")
-   await password.fill("learning")
+   await password.fill("Learning@830$3mK2")
    await loginButton.click()
-   await page.waitForLoadState()
+   //await page.waitForLoadState()
+
 
    //await page.pause()
    await page.locator(".card-title a").last().textContent()
