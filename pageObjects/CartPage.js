@@ -1,3 +1,4 @@
+//Auth- K S
 class CartPage {
 
     constructor(page) {

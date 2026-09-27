@@ -18,6 +18,6 @@ Feature: Ecommerce validations
     Then verify error message is displayed
 
     Examples:
-      | username           | password |
-      | aabbccdd@gmail.com | Bbbbbb@1 |
-      | helper@gmail.com   | helper@1 |
+      | username            | password |
+      | invalid@yopmail.com | Vbbbbb@1 |
+      | helper@gmail.com    | helper@1 |
