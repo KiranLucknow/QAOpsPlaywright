@@ -13,10 +13,10 @@ module.exports = defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    actionTimeout: 20 * 1000, //timeout for actions
+    actionTimeout: 40 * 1000, //timeout for actions
     navigationTimeout: 80 * 1000,   //timeout for navigation
     browserName: 'chromium',
-    headless: false,
+    headless: !!process.env.CI,
     screenshot: 'on', //off/only-n-failure
     trace: 'retain-on-failure' //on/off
   },

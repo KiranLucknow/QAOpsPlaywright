@@ -5,17 +5,22 @@ setDefaultTimeout(60 * 1000);
 
 
 Before({ timeout: 100 * 1000 }, async function () {
-
-    const browser = await playwright.chromium.launch({ headless: false })
-    const context = await browser.newContext()
-    this.page = await context.newPage()
+    this.browser = await playwright.chromium.launch({ headless: false });
+    this.context = await this.browser.newContext();
+    this.page = await this.context.newPage();
     this.poManager = new POmanager(this.page);
+});
 
-})
+// After(async function () {
+//     console.log("running at the end")
+// })
 
 After(async function () {
-    console.log("running at the end")
-})
+    console.log('running at the end');
+    if (this.page) await this.page.close();
+    if (this.context) await this.context.close();
+    if (this.browser) await this.browser.close();
+});
 
 
 AfterStep(async function ({ result }) {
